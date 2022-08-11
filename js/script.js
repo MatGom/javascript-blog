@@ -41,7 +41,7 @@
 		optTitleSelector = '.post-title',
 		optTitleListSelector = '.titles';
 
-	const generateTitleLinks = function () {
+	function generateTitleLinks () {
 		/* [DONE] remove contents of titleList */
 
 		const titleList = document.querySelector(optTitleListSelector);
