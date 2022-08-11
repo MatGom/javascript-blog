@@ -53,17 +53,34 @@
 		const titleList = document.querySelector(optTitleListSelector);
 		titleList.innerHTML = '';
 
-		/* FOR EACH ARTICLE */
+		/* [DONE] FOR EACH ARTICLE */
 
-		/* get the article id */
+		const articles = document.querySelectorAll(optArticleSelector);
 
-		/* find the title element */
+		let html = '';
+		
+		for (let article of articles) {
+			/* get the article id */
 
-		/* get the title from the title element */
+			const articleId = article.getAttribute('id');
 
-		/* create HTML of the link */
+			/* find the title element */
+			/* get the title from the title element */
 
-		/* insert link into titleList */
+			const articleTitle = article.querySelector(optTitleSelector).innerHTML;
+
+			/* create HTML of the link */
+
+			const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
+
+			/* insert link into titleList */
+
+			html = html + linkHTML;
+
+			console.log(html);
+		}
+
+		titleList.innerHTML = html;
 	};
 
 	generateTitleLinks();
